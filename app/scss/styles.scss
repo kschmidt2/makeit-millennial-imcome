@@ -2,13 +2,13 @@ $breakpoint-sm: 540px;
 $breakpoint-md: 660px;
 $breakpoint-lg: 717px;
 
-@mixin x-small {
+@mixin x-small { // mobile
   @media (max-width: #{$breakpoint-sm - 1px}) {
     @content;
   }
 }
 
-@mixin sm-md-xl {
+@mixin sm-md-xl { // desktop
   @media (min-width: #{$breakpoint-sm + 1px}) {
     @content;
   }
@@ -22,9 +22,96 @@ $breakpoint-lg: 717px;
 
 @import "colors";
 
-.chart-area {
-  @import "type";
+.chart-area { // add the proper class here
+
+  // type styles
+
+  $font-stack: 'Avenir', 'Avenir Next', 'Arial', sans-serif;
+
+  .chart-subhead {
+      fill: $slate-secondary-6;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      max-width: 600px;
+  }
+
+  .chart-title, .chart-title-social {
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 14px;
+      // bottom margin should be 10px if there is no legend, or if the legend runs into the chart title
+      margin-bottom: 10px;
+      @include sm-md-xl {
+          // set this only if there is a chart title + legend
+          margin-bottom: -33px;
+      }
+  }
+
+  .chart-note {
+      fill: $slate-secondary-5;
+      font-size: 14px;
+      line-height: 18px;
+      margin-bottom: 10px;
+      width: 70%;
+      @include sm-md-xl {
+          width: 80%;
+      }
+  }
+
+  .chart-source, .chart-credit {
+      font-size: 9.5px;
+      line-height: 12px;
+      text-transform: uppercase;
+      color: $slate-secondary-5;
+      letter-spacing: 1px;
+      width: 65%;
+      @include sm-md-xl {
+          width: 80%;
+          font-size: 10px;
+      }
+  }
+
+  .chart-credit {
+      &:before {
+          content: "Graphic: ";
+      }
+      @include sm-md-xl {
+          padding-right: 10px;
+      }
+  }
+
+  .chart-source {
+      &:before {
+          content: "Source: ";
+      }
+      float: left;
+      @include sm-md-xl {
+          float: none;
+          } 
+  }
+
+  .strong {
+      font-weight: 600;
+  }
+
+  .highcharts-annotation-label {
+      font-size: 14px;
+      line-height: 18px;
+      fill: $slate-secondary-5;
+      & span {
+          background-color: white;
+          padding: 0 5px;
+          @include x-small {
+              background-color: rgba(#fff, .6)
+          }
+      }
+  }
+
   @import "highcharts";
+
+  // general chart styles
 
   box-sizing: border-box;
 
@@ -51,8 +138,9 @@ $breakpoint-lg: 717px;
     width: 100%;
     height: 300px;
     margin-top: -10px;
-    @include sm-md-xl {
-      height: 400px;
+    @include x-small {
+      // set this only if there is no chart note (otherwise the leaves run into the chart on mobile)
+      // margin-bottom: 30px;
     }
   }
 
@@ -60,7 +148,36 @@ $breakpoint-lg: 717px;
     width: 214px;
     margin-top: 20px;
   }
+
+  .highcharts-yaxis-labels {
+    // use this to change the axis label
+    & span:first-child {
+      // transform: translate (10px,0) !important;
+      &:after {
+        content: "%";
+    }
+    }
+  }
+
+  //  set this if the x-axis is not 0
+  // .highcharts-axis-line {
+  //   stroke-width: 0;
+  // }
+
+  // if 0 is in the middle of the chart, set its gridline to black
+  // the nth-child number represents the grid line to be changed
+  // IMPORTANT: if you set this, you MUST set the yAxis min, max and tickAmount in the JS
+  // .highcharts-grid-line {
+  //   &:nth-child(3) {
+  //     stroke: black;
+  //   }
+  // }
+
+  // add additional styles here
+
+  
   
 }
 
+// uncomment this to make a social chart, then add the chart-area class in the social.scss partial
 // @import "social";

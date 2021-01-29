@@ -19,8 +19,8 @@ $font-stack: 'Avenir', 'Avenir Next', 'Arial', sans-serif;
     font-weight: 600;
     text-transform: uppercase;
     font-size: 14px;
-    // bottom margin should be 30px if there is no legend
-    margin-bottom: 30px;
+    // bottom margin should be 10px if there is no legend, or if the legend runs into the chart title
+    margin-bottom: 10px;
     @include sm-md-xl {
         // set this only if there is a chart title + legend
         margin-bottom: -33px;

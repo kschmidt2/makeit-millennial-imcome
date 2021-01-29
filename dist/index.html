@@ -8,19 +8,27 @@
   <title>Graphic preview</title>
 
   <!--build:css css/styles.min.css-->
-  <link rel="stylesheet" href="css/grow-highcharts-template_styles.css">
+  <link rel="stylesheet" href="css/minified_styles.css">
   <!--endbuild-->
 
 </head>
 
 <body>
 
-  <div class="chart-area">
-      <div class="chart-head" id="chart-head">This is a headline</div>
-      <div class="chart-subhead">This is a subdeck or chart title. In some cases, there might be a need for a chart title also.</div>
-      <div class="chart-title">This is a chart title</div>
-      <div class="chart-title-social">Social chart title</div>
-      <div class="chart-container" id="chart-container"></div>
+  <!-- add project name to the end of chart-area class, then apply it in styles.scss -->
+  <!-- add 'social' class to chart-area to get social chart -->
+  <!-- all charts should have a title -->
+  <!-- use a subhead only if needed for additional context-->
+  <!-- chart-title-social will only be visible if you add the social styles -->
+  <!-- add project name to the end of chart-container ID, then apply it in main.js -->
+
+  <!-- start copy for Carbon here -->
+
+  <div class="chart-area"> 
+      <div class="chart-subhead">This is a subhead. It is optional; use it if the chart needs more context than just a title.</div>
+      <div class="chart-title">This is a chart title</div>   
+      <div class="chart-title-social">Social chart title</div> 
+      <div class="chart-container" id="chart-container"></div> 
       <div class="chart-note">Note: Anything that needs an additional note or methodology explanation should go here.</div>
       <div>
         <span class="chart-credit">kiersten schmidt/grow</span>
@@ -29,14 +37,16 @@
       <img src="https://fm-static.cnbc.com/awsmedia/chart/2019/6/10/grow_logo.1562793450037.png" class="grow-logo">
       <img src="https://fm-static.cnbc.com/awsmedia/chart/2019/6/25/grow_logo_transparent-08.1564071637122.png" class="grow-logo-social">
   </div>
-  <div id="chart-fallback"></div>
-    
+
+  <script src="https://fm.cnbc.com/applications/cnbc.com/resources/files/2021/01/28/modernizr.js"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/data.js"></script>
-  <!-- <script src="http://code.highcharts.com/modules/exporting.js"></script> -->
   <!-- <script src="https://code.highcharts.com/highcharts-more.js"></script> -->
+
+  <!-- end copy for Carbon here -->
+
   <!--build:js js/main.min.js -->
-  <script src="js/grow-highcharts-template_main.js"></script>
+  <script src="js/minified_main.js"></script>
   <!-- endbuild -->
 </body>
 </html>

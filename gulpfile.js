@@ -34,7 +34,8 @@ const
   const projectPath = process.cwd();
   JSON.stringify(projectPath);
   const projectFolder = projectPath.split('/');
-  const projectName = projectFolder.pop();
+  // const projectName = projectFolder.pop(); gets the name of the project
+  const projectName = 'minified'
 
 // BrowserSync
 function browserSync(done) {

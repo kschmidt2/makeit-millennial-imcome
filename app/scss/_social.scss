@@ -1,12 +1,12 @@
 .social {
-    &.chart-area {
+    &.chart-area { // add the proper class here
         max-width: none;
         width: 2160px;
         height: 1080px;
         // padding for square
-        // padding: 80px 650px !important;
+        padding: 80px 650px !important;
         // padding for 1012x506 rectangle
-        padding: 80px 400px !important;
+        // padding: 80px 400px !important;
         margin: 20px;
         background-size: 100%;
         background-repeat: no-repeat;
