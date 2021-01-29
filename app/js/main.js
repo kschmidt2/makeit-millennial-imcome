@@ -6,7 +6,7 @@ Highcharts.setOptions({
 
 
 function drawHighcharts() {
-    Highcharts.chart("chart-container", { // add the proper ID here
+    Highcharts.chart("chart-container-PROJECT-NAME", { // add the proper ID here
         chart: {
             type: 'bar',
             styledMode: true,
