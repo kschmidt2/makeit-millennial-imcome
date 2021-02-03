@@ -69,15 +69,15 @@ function drawHighcharts() {
             title: false,
             labels: {
                 useHTML: true,
-                overflow: 'allow'
+                overflow: 'allow',
+                            // formatter: function () {
+            //     return Highcharts.numberFormat(this.value,0,'.',',');
+            // },
             },
             // min: ,
             // max: ,
             // tickAmount: ,
             // adds commas to thousands
-            // formatter: function () {
-            //     return Highcharts.numberFormat(this.value,0,'.',',');
-            // },
         },
         credits: {
             enabled: false

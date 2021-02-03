@@ -54,9 +54,10 @@ $breakpoint-lg: 717px;
       font-size: 14px;
       line-height: 18px;
       margin-bottom: 10px;
-      width: 70%;
-      @include sm-md-xl {
-          width: 80%;
+      width: 80%;
+      @include x-small() {
+        min-height: 30px;
+        width: 70%;
       }
   }
 
@@ -138,10 +139,6 @@ $breakpoint-lg: 717px;
     width: 100%;
     height: 300px;
     margin-top: -10px;
-    @include x-small {
-      // set this only if there is no chart note (otherwise the leaves run into the chart on mobile)
-      // margin-bottom: 30px;
-    }
   }
 
   & .grow-logo {
@@ -152,7 +149,7 @@ $breakpoint-lg: 717px;
   .highcharts-yaxis-labels {
     // use this to change the axis label
     & span:first-child {
-      // transform: translate (10px,0) !important;
+      // transform: translate(10px,0) !important;
       &:after {
         content: "%";
     }
