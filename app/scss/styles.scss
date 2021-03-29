@@ -22,75 +22,68 @@ $breakpoint-lg: 717px;
 
 @import "colors";
 
-.chart-area-PROJECT-NAME { // add the proper class here
+.chart-area-millennial-housing { // add the proper class here
 
   // type styles
 
-  $font-stack: 'Avenir', 'Avenir Next', 'Arial', sans-serif;
+  $font-stack: 'Averta', 'Arial', sans-serif;
+
+  @import "highcharts";
 
   .chart-subhead {
       fill: $slate-secondary-6;
-      font-size: 16px;
-      line-height: 20px;
+      font-size: 54px;
+      line-height: 62px;
       font-weight: 600;
-      margin-bottom: 20px;
-      max-width: 600px;
-  }
-
-  .chart-title, .chart-title-social {
-      font-weight: 600;
-      text-transform: uppercase;
-      font-size: 14px;
-      // bottom margin should be 10px if there is no legend, or if the legend runs into the chart title
-      margin-bottom: 10px;
-      @include sm-md-xl {
-          // set this only if there is a chart title + legend
-          margin-bottom: -33px;
-      }
-  }
-
-  .chart-note {
-      fill: $slate-secondary-5;
-      font-size: 14px;
-      line-height: 18px;
-      margin-bottom: 10px;
+      margin-bottom: 50px;
       width: 80%;
-      @include x-small() {
-        min-height: 30px;
-        width: 70%;
-      }
   }
 
-  .chart-source, .chart-credit {
-      font-size: 9.5px;
-      line-height: 12px;
-      text-transform: uppercase;
-      color: $slate-secondary-5;
-      letter-spacing: 1px;
-      width: 65%;
-      @include sm-md-xl {
-          width: 80%;
-          font-size: 10px;
-      }
+  // .chart-title, .chart-title-social {
+  //     font-weight: 600;
+  //     text-transform: uppercase;
+  //     font-size: 14px;
+  //     // bottom margin should be 10px if there is no legend, or if the legend runs into the chart title
+  //     margin-bottom: 10px;
+  //     @include sm-md-xl {
+  //         // set this only if there is a chart title + legend
+  //         margin-bottom: -33px;
+  //     }
+  // }
+
+  .chart-note, .chart-source {
+      fill: $slate-secondary-5;
+      font-size: 40px;
+      line-height: 48px;
+      margin-bottom: 20px;
   }
+
 
   .chart-credit {
       &:before {
           content: "Graphic: ";
       }
       @include sm-md-xl {
-          padding-right: 10px;
+          padding-right: 20px;
       }
   }
 
   .chart-source {
+    margin-bottom: 40px;
       &:before {
           content: "Source: ";
       }
-      float: left;
       @include sm-md-xl {
-          float: none;
+          // float: none;
           } 
+  }
+
+  .highcharts-axis-labels {
+    font-size: 46px;
+  }
+
+  .highcharts-legend-item > text {
+    font-size: 42px;
   }
 
   .strong {
@@ -98,8 +91,8 @@ $breakpoint-lg: 717px;
   }
 
   .highcharts-annotation-label {
-      font-size: 14px;
-      line-height: 18px;
+      font-size: 28px;
+      line-height: 36px;
       fill: $slate-secondary-5;
       & span {
           background-color: white;
@@ -110,20 +103,15 @@ $breakpoint-lg: 717px;
       }
   }
 
-  @import "highcharts";
-
   // general chart styles
 
   box-sizing: border-box;
 
-  background-size: 100px;
-  background-repeat: no-repeat;
-  background-image:
-    url(https://fm-static.cnbc.com/awsmedia/chart/2019/6/10/grow_leaves.1562793463706.png);
-  background-position: bottom right;
-  max-width: 660px;
-  margin-bottom: 25px;
+  
+  max-width: 1320px;
+  margin-bottom: 50px;
   font-family: $font-stack;
+  margin-left: 50px;
 
   & a {
     border-bottom: 1px solid $green-primary;
@@ -137,13 +125,27 @@ $breakpoint-lg: 717px;
 
   & .chart-container {
     width: 100%;
-    height: 300px;
-    margin-top: -10px;
+    height: 600px;
+    margin-top: -20px;
+    margin-bottom: 70px;
+    & .highcharts-container {
+      margin-bottom: 25px;
+    }
+    &:after {
+      content: "";
+      width:90%;
+      height: 8px;
+      background-repeat: repeat;
+      top: 300;
+      left: 50;
+      position: absolute;
+      background-size: 3%;
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='4'%3E%3Cpath d='M10 2c3.333 2 6.667 2 10 0M0 2c3.333-2 6.667-2 10 0' stroke='%2368ebca' fill='transparent'/%3E%3C/svg%3E");
+    }
   }
 
-  & .grow-logo {
-    width: 214px;
-    margin-top: 20px;
+  & .makeit-logo {
+    width: 250px;
   }
 
   .highcharts-yaxis-labels {
@@ -155,6 +157,28 @@ $breakpoint-lg: 717px;
     }
     }
   }
+
+  & #chart-container-millennial-housing-1, #chart-container-millennial-housing-8 {
+    height: 500px;
+  }
+
+  & #chart-container-millennial-housing-6 {
+    height: 700px;
+  }
+
+  & #chart-container-millennial-housing-8 {
+    .highcharts-color-0 {
+      fill: $gray;
+      stroke: $gray;
+    }
+    .highcharts-series rect {
+      &:last-child {
+        fill: $teal;
+        stroke: $teal;
+      }
+    }
+  }
+
 
   //  set this if the x-axis is not 0
   // .highcharts-axis-line {

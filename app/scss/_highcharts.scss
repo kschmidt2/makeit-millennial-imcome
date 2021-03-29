@@ -78,7 +78,6 @@
   .highcharts-axis-labels {
     fill: $slate-secondary-6;
     cursor: default;
-    font-size: 14px;
   }
   
   .highcharts-yaxis-labels {
@@ -200,28 +199,28 @@
   /* Series options */
   /* Default colors */
   .highcharts-color-0 {
-    fill: $green-primary;
-    stroke: $green-primary;
+    fill: $teal;
+    stroke: $teal;
   }
   
   .highcharts-color-1 {
-    fill: $slate-secondary-3;
-    stroke: $slate-secondary-3;
+    fill: $gray;
+    stroke: $gray;
   }
   
   .highcharts-color-2 {
-    fill: $purple-primary;
-    stroke: $purple-primary;
+    fill: $blue;
+    stroke: $blue;
   }
   
   .highcharts-color-3 {
-    fill: $yellow-primary;
-    stroke: $yellow-primary;
+    fill: $coral;
+    stroke: $coral;
   }
   
   .highcharts-color-4 {
-    fill: $blue-primary;
-    stroke: $blue-primary;
+    fill: #000000;
+    stroke: #000000;
   }
   
   // .highcharts-color-5 {
@@ -383,13 +382,12 @@
   
   /* Legend */
   .highcharts-legend-box {
-    fill: none;
+    fill: white;
     stroke-width: 0;
   }
   
   .highcharts-legend-item > text {
     fill: #000;
-    font-size: 14px;
     cursor: pointer;
     stroke-width: 0;
   }
