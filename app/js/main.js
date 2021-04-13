@@ -6,11 +6,11 @@ Highcharts.setOptions({
 
 
 function drawHighcharts() {
-    Highcharts.chart("chart-container-millennial-studentloans-1", { // add the proper ID here
+    Highcharts.chart("chart-container-millennial-income-1", { // add the proper ID here
         chart: {
             type: 'bar',
             styledMode: true,
-            spacingBottom: 25,
+            spacingBottom: 55,
             spacingRight: 40,
             spacingLeft: 0,
             spacingTop: 20
@@ -19,13 +19,18 @@ function drawHighcharts() {
             text: null
         },
         data: {
-            googleSpreadsheetKey: '1H1tTNPPKRD3ZQj-0ni_V22mU64diJ6ukZqtoLSz0Rww',
+            googleSpreadsheetKey: '11HG2FEUr7d3jcrSVcJbFjgyhPgaTrI4vv3AI59cnR-k',
             googleSpreadsheetWorksheet: 1,
         },
         // for bar charts only
         plotOptions: {
             series: {
                 groupPadding: 0.1,
+                dataLabels: {
+                    enabled: true,
+                    format: '{y}%',
+                    x: 10
+                },
                 clip: false
             } 
         },
@@ -54,7 +59,7 @@ function drawHighcharts() {
             y: -10,
             symbolPadding: 20,
             itemDistance: 40,
-            // enabled: false
+            enabled: false
         },
         xAxis: {
             labels: {
@@ -79,8 +84,9 @@ function drawHighcharts() {
             // },
             },
             // min: ,
-            max: 50000,
-            tickAmount: 6,
+            visible: false,
+            max: 40,
+            tickAmount: 5,
             // adds commas to thousands
         },
         credits: {
@@ -113,11 +119,11 @@ function drawHighcharts() {
             }]
         }
     }),
-    Highcharts.chart("chart-container-millennial-studentloans-2", { // add the proper ID here
+    Highcharts.chart("chart-container-millennial-income-2", { // add the proper ID here
         chart: {
             type: 'bar',
             styledMode: true,
-            spacingBottom: 25,
+            spacingBottom: 55,
             spacingRight: 40,
             spacingLeft: 10,
             spacingTop: 20
@@ -126,16 +132,17 @@ function drawHighcharts() {
             text: null
         },
         data: {
-            googleSpreadsheetKey: '1H1tTNPPKRD3ZQj-0ni_V22mU64diJ6ukZqtoLSz0Rww',
+            googleSpreadsheetKey: '11HG2FEUr7d3jcrSVcJbFjgyhPgaTrI4vv3AI59cnR-k',
             googleSpreadsheetWorksheet: 2,
         },
         // for bar charts only
         plotOptions: {
             series: {
-                groupPadding: 0.25,
+                groupPadding: 0.1,
                 dataLabels: {
                     enabled: true,
-                    format: '{y}%'
+                    format: '{y}%',
+                    x: 10
                 }
             } 
         },
@@ -172,10 +179,6 @@ function drawHighcharts() {
                 style: {
                     whiteSpace: 'nowrap',
                 },
-                reserveSpace: false,
-                align: "left",
-                x: 10,
-                y: -40
                 // edits xAxis ticks
                 // dateTimeLabelFormats: {
                 //     week: '%b. %e',
@@ -229,56 +232,57 @@ function drawHighcharts() {
             }]
         }
     }),
-    Highcharts.chart("chart-container-millennial-studentloans-3", { // add the proper ID here
+    Highcharts.chart("chart-container-millennial-income-3", { // add the proper ID here
         chart: {
-            type: 'bar',
+            type: 'line',
             styledMode: true,
-            spacingBottom: 25,
+            spacingBottom: 35,
             spacingRight: 40,
-            spacingLeft: 0,
+            spacingLeft: 15,
             spacingTop: 20
         }, 
         title: {
             text: null
         },
         data: {
-            googleSpreadsheetKey: '1H1tTNPPKRD3ZQj-0ni_V22mU64diJ6ukZqtoLSz0Rww',
+            googleSpreadsheetKey: '11HG2FEUr7d3jcrSVcJbFjgyhPgaTrI4vv3AI59cnR-k',
             googleSpreadsheetWorksheet: 3,
         },
         // for bar charts only
-        plotOptions: {
-            series: {
-                groupPadding: 0.1,
-                clip: false,
-            } ,
-        },
-        // for line charts only
         // plotOptions: {
         //     series: {
-        //         lineWidth: 1,
-        //         // clip: false,
-        //         marker: {
-        //             enabled: false,
-        //             symbol: 'circle',
-        //             fillColor: '#ffffff',
-        //             states: {
-        //                 hover: {
-        //                     fillColor: '#ffffff'
-        //                 }
-        //             }
-        //         }
-        //     }
+        //         groupPadding: 0.1,
+        //         clip: false,
+        //     } ,
         // },
+        // for line charts only
+        plotOptions: {
+            series: {
+                lineWidth: 1,
+                clip: false,
+                marker: {
+                    enabled: false,
+                    symbol: 'circle',
+                    fillColor: '#ffffff',
+                    states: {
+                        hover: {
+                            fillColor: '#ffffff'
+                        }
+                    }
+                }
+            }
+        },
         legend: {
             align: 'right',
             symbolRadius: 0,
             verticalAlign: 'top',
             x: 0,
-            y: 0,
+            y: 10,
             symbolPadding: 20,
             itemDistance: 40,
             itemMarginBottom: 40,
-            enabled: false
+            floating: true
+            // enabled: false
         },
         xAxis: {
             labels: {
@@ -290,8 +294,9 @@ function drawHighcharts() {
                 //     week: '%b. %e',
                 // },
             },
+            type: 'category',
             tickLength: 10,
-            // tickInterval: 24 * 3600 * 1000 * 7
+            tickInterval: 8
         },
         yAxis: {
             title: false,
@@ -302,8 +307,8 @@ function drawHighcharts() {
             //     return Highcharts.numberFormat(this.value,0,'.',',');
             // },
             },
-            // min: ,
-            max:  25,
+            min: -15,
+            max:  0,
             tickAmount: 6,
             // adds commas to thousands
         },
@@ -337,11 +342,11 @@ function drawHighcharts() {
             }]
         }
     }),
-    Highcharts.chart("chart-container-millennial-studentloans-4", { // add the proper ID here
+    Highcharts.chart("chart-container-millennial-income-4", { // add the proper ID here
         chart: {
-            type: 'bar',
+            type: 'column',
             styledMode: true,
-            spacingBottom: 25,
+            spacingBottom: 35,
             spacingRight: 40,
             spacingLeft: 0,
             spacingTop: 20
@@ -350,7 +355,7 @@ function drawHighcharts() {
             text: null
         },
         data: {
-            googleSpreadsheetKey: '1H1tTNPPKRD3ZQj-0ni_V22mU64diJ6ukZqtoLSz0Rww',
+            googleSpreadsheetKey: '11HG2FEUr7d3jcrSVcJbFjgyhPgaTrI4vv3AI59cnR-k',
             googleSpreadsheetWorksheet: 4,
         },
         // for bar charts only
@@ -382,11 +387,12 @@ function drawHighcharts() {
             symbolRadius: 0,
             verticalAlign: 'top',
             x: 0,
-            y: 0,
+            y: 400,
             symbolPadding: 20,
             itemDistance: 40,
             itemMarginBottom: 40,
-            enabled: false
+            floating: true
+            // enabled: false
         },
         xAxis: {
             labels: {
@@ -411,8 +417,8 @@ function drawHighcharts() {
             //     return Highcharts.numberFormat(this.value,0,'.',',');
             // },
             },
-            // min: ,
-            max: 30,
+            min: -75,
+            max: 0,
             tickAmount: 4,
             // adds commas to thousands
         },

@@ -22,7 +22,7 @@ $breakpoint-lg: 717px;
 
 @import "colors";
 
-.chart-area-millennial-studentloans { // add the proper class here
+.chart-area-millennial-income { // add the proper class here
 
   // type styles
 
@@ -158,11 +158,68 @@ $breakpoint-lg: 717px;
     }
   }
 
-  & #chart-container-millennial-studentloans-1 {
+  .highcharts-data-label {
+    font-size: 36px;
+    & text {
+      fill: $teal;
+    }
+    
+  }
+
+  & #chart-container-millennial-income-1 {
+    .highcharts-data-label {
+      &:nth-child(3){
+        & text {
+          transform: translate(-25px,0);
+          fill: white;
+        }
+      }
+      
+    }
+
+  }
+
+  & #chart-container-millennial-income-3 {
+      .highcharts-grid-line {
+        &:last-child {
+          stroke: black;
+        }
+      }
+      .highcharts-axis-line {
+          stroke-width: 0;
+        }
+    .highcharts-yaxis-labels {
+      // use this to change the axis label
+      transform: translate(-30px,0) !important;
+      & span:first-child {
+        // transform: translate(10px,0) !important;
+        &:after {
+          content: "";
+      }
+      }
+      & span:last-child {
+        transform: translate(45px,0) !important;
+        &:after {
+          content: "%";
+      }
+      }
+    }
+
+  }
+
+  & #chart-container-millennial-income-4 {
+    .highcharts-grid-line {
+      &:last-child {
+        stroke: black;
+      }
+    }
+    .highcharts-axis-line {
+        stroke-width: 0;
+      }
     .highcharts-color-0 {
       fill: $gray;
       stroke: $gray;
-    } 
+    }
     .highcharts-color-1 {
       fill: $teal;
       stroke: $teal;
@@ -174,53 +231,12 @@ $breakpoint-lg: 717px;
         &:after {
           content: "";
       }
-      &:before {
-        content: "$"
       }
+      & span:last-child {
+        transform: translate(10px,0) !important;
+        &:after {
+          content: "%";
       }
-    }
-  }
-
-  & #chart-container-millennial-studentloans-2 {
-    height: 1500px;
-    .highcharts-series rect {
-      &:last-child {
-        fill: $gray;
-        stroke: $gray;
-      }
-    }
-    .highcharts-yaxis-labels {
-      // use this to change the axis label
-      & span:first-child {
-        transform: translate(25px,0) !important;
-      }
-    }
-    .highcharts-axis-labels {
-      letter-spacing: -1px;
-    }
-    .highcharts-data-label {
-      font-size: 36px;
-      &:last-child{
-        & text {
-          fill: $gray;
-        }
-      }
-      & text {
-        fill: $teal;
-      }
-      
-    }
-  }
-
-  & #chart-container-millennial-studentloans-8 {
-    .highcharts-color-0 {
-      fill: $gray;
-      stroke: $gray;
-    }
-    .highcharts-series rect {
-      &:last-child {
-        fill: $teal;
-        stroke: $teal;
       }
     }
   }
